@@ -5,10 +5,10 @@ const customConfig = defineConfig({
     tokens: {
       colors: {
         brand: {
-          500: "#815ec2",
+          500: {value: "#815ec2"},
         },
         accent: {
-          500: "#833043",
+          500: {value: "#833043"},
         }
       },
     },
