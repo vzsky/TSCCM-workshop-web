@@ -13,6 +13,6 @@ git clone https://github.com/vzsky/next-ts-template
 Install it and run:
 
 ```bash
-npm install
-npm run dev
+yarn
+yarn dev
 ```
