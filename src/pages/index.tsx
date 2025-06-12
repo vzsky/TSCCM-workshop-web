@@ -1,21 +1,13 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  Button,
-  Stack,
-} from "@chakra-ui/react"
+import { Box, Container, Heading, Text, Button, Stack } from '@chakra-ui/react';
 
-import { Footer } from "../components/footer"
-import { Speakers } from "../components/speakers"
-import { Topics } from "../components/topics"
-import { Sponsors } from "../components/sponsors"
+import { Footer } from '../components/footer';
+import { Speakers } from '../components/speakers';
+import { Topics } from '../components/topics';
+import { Sponsors } from '../components/sponsors';
 
 export default function Page() {
   return (
     <Box>
-
       {/* Hero Section */}
       <Box bg="brand.500" color="white">
         <Container maxW="container.xl" py={20} height="100vh">
@@ -59,7 +51,9 @@ export default function Page() {
           <Box py={8}>
             <Container maxW="container.xl">
               <Stack align="center" gap={2}>
-                <Text fontSize="xl" fontWeight="bold" color="brand.500">July 19, 2025</Text>
+                <Text fontSize="xl" fontWeight="bold" color="brand.500">
+                  July 19, 2025
+                </Text>
                 <Text fontSize="lg">King Chulalongkorn Memorial Hospital</Text>
               </Stack>
             </Container>
@@ -93,8 +87,8 @@ export default function Page() {
           </Stack>
         </Container>
       </Box>
-      
+
       <Footer />
     </Box>
-  )
+  );
 }
