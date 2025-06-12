@@ -6,43 +6,86 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react"
-import { Navbar } from "../components/nav"
+
 import { Footer } from "../components/footer"
 import { Speakers } from "../components/speakers"
-import { Map } from "../components/map"
-import { TimeTable } from "../components/timetable"
+import { Topics } from "../components/topics"
+import { Sponsors } from "../components/sponsors"
 
 export default function Page() {
   return (
     <Box>
-      <Navbar />
 
+      {/* Hero Section */}
       <Box bg="brand.500" color="white">
-        <Container maxW="container.xl" py={20}>
+        <Container maxW="container.xl" py={20} height="100vh">
           <Stack gap={6} align="center" textAlign="center">
             <Heading
               fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
               fontWeight="bold"
               lineHeight="1.2"
             >
-              14th Critical Care Conference
-            </Heading>
-            <Heading
-              fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
-              color="whiteAlpha.900"
-            >
-              Together in Critical Care
+              Data Warehouse and AI in Intensive Care Medicine
             </Heading>
             <Text fontSize={{ base: 'lg', md: 'xl' }} maxW="2xl">
-              Join us in Thailand for the most prestigious critical care conference of 2025.
-              A platform for healthcare professionals to share knowledge, network, and advance critical care medicine.
+              Interactive Workshop
             </Text>
+            <Stack direction={{ base: 'column', md: 'row' }} gap={4}>
+              <Button
+                size="lg"
+                bg="white"
+                color="brand.500"
+                _hover={{
+                  bg: 'whiteAlpha.900',
+                }}
+              >
+                Register Now
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                color="white"
+                borderColor="white"
+                _hover={{
+                  bg: 'whiteAlpha.200',
+                }}
+              >
+                View Schedule
+              </Button>
+            </Stack>
+          </Stack>
+
+          {/* Date and Venue */}
+          <Box py={8}>
+            <Container maxW="container.xl">
+              <Stack align="center" gap={2}>
+                <Text fontSize="xl" fontWeight="bold" color="brand.500">July 19, 2025</Text>
+                <Text fontSize="lg">King Chulalongkorn Memorial Hospital</Text>
+              </Stack>
+            </Container>
+          </Box>
+        </Container>
+      </Box>
+
+      <Topics />
+
+      <Speakers />
+
+      <Sponsors />
+
+      {/* Call to Action */}
+      <Box py={16} bg="brand.500" color="white">
+        <Container maxW="container.xl">
+          <Stack gap={6} align="center" textAlign="center">
+            <Heading size="xl">
+              Define Thailand's future of ICU meaningfully with AI together.
+            </Heading>
             <Button
               size="lg"
               bg="white"
               color="brand.500"
               _hover={{
-                bg: 'whiteAlpha.800',
+                bg: 'whiteAlpha.900',
               }}
             >
               Register Now
@@ -50,13 +93,7 @@ export default function Page() {
           </Stack>
         </Container>
       </Box>
-
-      <TimeTable />
-
-      <Speakers />
-
-      <Map />
-
+      
       <Footer />
     </Box>
   )
