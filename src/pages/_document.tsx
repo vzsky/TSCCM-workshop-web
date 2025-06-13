@@ -8,7 +8,15 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html suppressHydrationWarning>
-        <Head />
+        <Head>
+          <style>{`
+            html, body {
+              background-color: white;
+              margin: 0;
+              padding: 0;
+            }
+          `}</style>
+        </Head>
         <body>
           <Main />
           <NextScript />

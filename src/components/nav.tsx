@@ -1,35 +1,43 @@
-import { Box, Flex, Heading, Stack, Link } from '@chakra-ui/react';
+import { Box, Flex, Heading, Stack, Link as ChakraLink } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export const NavLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
-  <Link
+  <ChakraLink
     px={2}
     py={1}
-    rounded={'md'}
+    color="white"
+    as={Link}
     _hover={{
       textDecoration: 'none',
-      bg: 'gray.200',
+      color: "gray.200"
     }}
     href={href}
   >
     {children}
-  </Link>
+  </ChakraLink>
 );
 
 export const Navbar = () => (
-  <Box bg={'gray.100'} px={4} boxShadow="sm">
+  <Box bg={'brand.500'} px={4} boxShadow="sm">
     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       <Flex alignItems={'center'}>
-        <Heading size="lg" color="brand.500">
-          TSCCM 2025
-        </Heading>
+        <ChakraLink 
+          href="/"
+          as={Link}
+          _hover={{
+            textDecoration: 'none',
+            color: "gray.200"
+          }}
+        >
+          <Heading size="lg" color="white">
+            TSCCM 2025
+          </Heading>
+        </ChakraLink>
       </Flex>
 
       <Flex alignItems={'center'}>
         <Stack direction={'row'} gap={7}>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#program">Program</NavLink>
-          <NavLink href="#registration">Registration</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavLink href="#register">Register</NavLink>
         </Stack>
       </Flex>
     </Flex>

@@ -19,9 +19,6 @@ export const Sponsors = () => (
             <Text fontWeight="bold" color="brand.500">
               Bangkok Hospital
             </Text>
-            <Text fontSize="sm" color="gray.600">
-              Platinum Sponsor
-            </Text>
           </Box>
 
           {/* Sponsor 2 */}
@@ -29,9 +26,6 @@ export const Sponsors = () => (
             <Image src="https://via.placeholder.com/200x100" alt="Sponsor 2" mx="auto" mb={4} />
             <Text fontWeight="bold" color="brand.500">
               Siriraj Hospital
-            </Text>
-            <Text fontSize="sm" color="gray.600">
-              Gold Sponsor
             </Text>
           </Box>
 
@@ -41,9 +35,6 @@ export const Sponsors = () => (
             <Text fontWeight="bold" color="brand.500">
               Chulalongkorn Hospital
             </Text>
-            <Text fontSize="sm" color="gray.600">
-              Silver Sponsor
-            </Text>
           </Box>
 
           {/* Sponsor 4 */}
@@ -51,9 +42,6 @@ export const Sponsors = () => (
             <Image src="https://via.placeholder.com/200x100" alt="Sponsor 4" mx="auto" mb={4} />
             <Text fontWeight="bold" color="brand.500">
               Mahidol University
-            </Text>
-            <Text fontSize="sm" color="gray.600">
-              Academic Partner
             </Text>
           </Box>
         </SimpleGrid>

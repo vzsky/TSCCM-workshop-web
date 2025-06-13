@@ -1,4 +1,5 @@
-import { Box, Container, Stack, Heading, Text, Flex, Button } from '@chakra-ui/react';
+import { Box, Container, Stack, Heading, Text, Flex } from '@chakra-ui/react';
+import { Button } from './button';
 
 export const TimeTable = () => (
   <Box py={16} bg="gray.50">
@@ -123,16 +124,7 @@ export const TimeTable = () => (
           </Stack>
         </Box>
 
-        <Button
-          size="lg"
-          bg="brand.500"
-          color="white"
-          _hover={{
-            bg: 'brand.600',
-          }}
-          alignSelf="center"
-          mt={4}
-        >
+        <Button variant="white">
           Download Full Schedule
         </Button>
       </Stack>
