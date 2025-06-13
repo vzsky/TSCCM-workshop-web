@@ -9,7 +9,7 @@ export const NavLink = ({ children, href }: { children: React.ReactNode; href: s
     as={Link}
     _hover={{
       textDecoration: 'none',
-      color: "gray.200"
+      color: 'gray.200',
     }}
     href={href}
   >
@@ -21,12 +21,12 @@ export const Navbar = () => (
   <Box bg={'brand.500'} px={4} boxShadow="sm">
     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       <Flex alignItems={'center'}>
-        <ChakraLink 
+        <ChakraLink
           href="/"
           as={Link}
           _hover={{
             textDecoration: 'none',
-            color: "gray.200"
+            color: 'gray.200',
           }}
         >
           <Heading size="lg" color="white">

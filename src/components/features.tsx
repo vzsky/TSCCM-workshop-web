@@ -1,31 +1,23 @@
 import { Heading, Text, Box, Container, HStack, Icon } from '@chakra-ui/react';
 import { MdHealthAndSafety, MdSchool, MdLocalHospital, MdPolicy } from 'react-icons/md';
 
-const FeatureCard = ({ 
-  title, 
-  description, 
+const FeatureCard = ({
+  title,
+  description,
   icon,
-}: { 
-  title: string; 
-  description: string; 
+}: {
+  title: string;
+  description: string;
   icon: React.ElementType;
 }) => (
   <HStack gap={0} alignItems="stretch">
-    <Box 
-      p={6} 
-      bg="white" 
-      borderRadius="lg" 
-      boxShadow="sm"
-      flex="1"
-    >
+    <Box p={6} bg="white" borderRadius="lg" boxShadow="sm" flex="1">
       <Box display="flex" flexDirection="column" alignItems="center" textAlign="center" gap={4}>
         <Icon as={icon} w={10} h={10} color="brand.500" />
         <Heading size="md" color="brand.500">
           {title}
         </Heading>
-        <Text color="gray.600">
-          {description}
-        </Text>
+        <Text color="gray.600">{description}</Text>
       </Box>
     </Box>
   </HStack>

@@ -11,9 +11,7 @@ export const Footer = () => (
           <Heading size="xl">
             Define Thailand's future of ICU meaningfully with AI together.
           </Heading>
-          <Button variant="white">
-            Register Now
-          </Button>
+          <Button variant="white">Register Now</Button>
         </Stack>
       </Container>
     </Box>

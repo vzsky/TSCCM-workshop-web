@@ -21,11 +21,7 @@ const ColorPalette = ({ name, color }: { name: string; color: string }) => (
     <Heading size="md">{name}</Heading>
     <Grid templateColumns="repeat(5, 1fr)" gap={4}>
       {[50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map((shade) => (
-        <ColorSwatch
-          key={shade}
-          color={color}
-          shade={shade.toString()}
-        />
+        <ColorSwatch key={shade} color={color} shade={shade.toString()} />
       ))}
     </Grid>
   </VStack>
@@ -41,4 +37,4 @@ export default function PalettePage() {
       </VStack>
     </Container>
   );
-} 
+}

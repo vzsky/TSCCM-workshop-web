@@ -30,11 +30,7 @@ export const Button = ({ children, variant = 'primary', ...props }: ButtonProps)
   };
 
   return (
-    <ChakraButton
-      size="lg"
-      {...variants[variant]}
-      {...props}
-    >
+    <ChakraButton size="lg" {...variants[variant]} {...props}>
       {children}
     </ChakraButton>
   );

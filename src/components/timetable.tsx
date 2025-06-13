@@ -124,9 +124,7 @@ export const TimeTable = () => (
           </Stack>
         </Box>
 
-        <Button variant="white">
-          Download Full Schedule
-        </Button>
+        <Button variant="white">Download Full Schedule</Button>
       </Stack>
     </Container>
   </Box>
