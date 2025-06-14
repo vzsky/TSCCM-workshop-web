@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, Stack, Image, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Stack, Image, SimpleGrid } from '@chakra-ui/react'
 
 const speakers = [
   {
