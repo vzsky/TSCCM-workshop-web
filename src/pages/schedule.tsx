@@ -80,7 +80,7 @@ const subHeadingSize = {
 
 const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
   <Box px={8} py={4}>
-    <Stack direction={{ base: 'column', md: 'row' }} gap={6} alignItems="start">
+    <Stack direction={{ base: 'column', md: 'row' }} gap={{ base: 2, md: 6 }} alignItems="start">
       <Text fontWeight="bold" minW="80px" color="brand.500">
         {time}
       </Text>
@@ -249,8 +249,8 @@ export default function SchedulePage() {
           <Stack direction={{ base: 'column', md: 'row' }} gap={12}>
             <VStack
               align="flex-start"
-              pl={{ base: 12, md: 32 }}
-              pr={{ base: 12, md: 0 }}
+              pl={{ base: 6, md: 32 }}
+              pr={{ base: 6, md: 0 }}
               gap={24}
               width={{ base: '100%', md: '60%' }}
             >
@@ -270,14 +270,14 @@ export default function SchedulePage() {
             </VStack>
           </Stack>
 
-          <Box width="100%" mx="auto" mt={16} px={{ base: 12, md: 24 }}>
-            <Box backgroundColor="brand.500" borderRadius={16} p={16}>
+          <Box width="100%" mx="auto" mt={16} px={{ base: 6, md: 24 }}>
+            <Box backgroundColor="brand.500" borderRadius={16} p={{ base: 6, md: 16 }}>
               <Heading size={subHeadingSize} mb={8} color="white" fontSize="3xl" textAlign="start">
                 Schedule
               </Heading>
               <VStack gap={4} alignItems="stretch">
                 {scheduleItems.map((item, index) => (
-                  <Box key={index} bg="gray.50" p={4} borderRadius="lg" boxShadow="sm">
+                  <Box key={index} bg="gray.50" p={{ base: 0, md: 4 }} borderRadius="lg" boxShadow="sm">
                     <ScheduleItem {...item} />
                   </Box>
                 ))}
