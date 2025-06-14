@@ -172,31 +172,31 @@ const ContactSection = () => (
 )
 
 const EventLocationSection = () => (
-  <Box width="100%">
+  <Box width="100%" borderColor="brand.500" borderWidth={1} borderRadius={16} backgroundColor="brand.50" p={8}>
     <Heading size={subHeadingSize} mb={4} color="brand.500" textAlign="left">
       Event Location
     </Heading>
-    <VStack gap={3} width="100%" align="center">
-      <Heading size={subHeadingSize} color="gray.700" textAlign="center">
+    <VStack gap={3} width="100%" align="left">
+      <Map />
+      <Heading size="xl" mt={4} color="gray.700" textAlign="left">
         King Chulalongkorn Memorial Hospital
       </Heading>
-      <Text color="brand.600" textAlign="center">
+      <Text color="brand.600" textAlign="left">
         Bhumisiri Mangkhalanusorn Bldg (12th floor)
       </Text>
-      <Text color="brand.600" textAlign="center">
+      <Text color="brand.600" textAlign="left">
         1873 Rama IV Rd, Pathum Wan, Bangkok 10330, Thailand
       </Text>
-      <Map />
     </VStack>
   </Box>
 )
 
 const DateAndTimeSection = () => (
-  <Box width="100%">
-    <Heading size={subHeadingSize} mb={4} color="brand.500">
+  <Box width="100%" borderColor="brand.500" borderWidth={1} borderRadius={16} backgroundColor="brand.50" p={8}>
+    <Heading size={subHeadingSize} mb={6} color="brand.500">
       Date and Time
     </Heading>
-    <VStack align="flex-start" gap={6}>
+    <VStack align="flex-start" gap={4}>
       <HStack gap={4}>
         <Box as={FiCalendar} fontSize="xl" color="brand.800" />
         <Text fontSize="lg" color="gray.500">
@@ -239,7 +239,7 @@ export default function SchedulePage() {
               <ContactSection />
             </VStack>
 
-            <VStack align="flex-start" gap={12} width={{ base: '100%', md: '40%' }}>
+            <VStack align="flex-start" pr={{base: 0, md: 12}} gap={12} width={{ base: '100%', md: '40%' }}>
               <EventLocationSection />
               <DateAndTimeSection />
             </VStack>
