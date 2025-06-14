@@ -53,12 +53,13 @@ const speakers = [
   },
   {
     name: 'Assoc. Prof. Mengling Feng',
-    title: 'Director of AI for Public Health (AI4PH) Program, National University of Singapore (NUS)',
+    title:
+      'Director of AI for Public Health (AI4PH) Program, National University of Singapore (NUS)',
     descriptions: [
       'Leads AI4PH and B.MAD domains at NUS, focusing on healthcare AI research and innovation',
       'Published nearly 200 papers with 13,000+ citations in top-tier journals and conferences',
       'Secured over SGD 10M in funding; organizes annual Singapore Healthcare AI Datathon',
-      'Co-founded FathomX, an AI startup empowering Asian women\'s health, valued at USD 15M',
+      "Co-founded FathomX, an AI startup empowering Asian women's health, valued at USD 15M",
     ],
     imageSrc: '/static/Feng.avif',
   },

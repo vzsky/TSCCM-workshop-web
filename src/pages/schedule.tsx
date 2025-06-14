@@ -80,7 +80,7 @@ const subHeadingSize = {
 
 const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
   <Box px={8} py={4}>
-    <Stack direction={{ base: "column", md: "row" }} gap={6} alignItems="start">
+    <Stack direction={{ base: 'column', md: 'row' }} gap={6} alignItems="start">
       <Text fontWeight="bold" minW="80px" color="brand.500">
         {time}
       </Text>
@@ -172,7 +172,14 @@ const ContactSection = () => (
 )
 
 const EventLocationSection = () => (
-  <Box width="100%" borderColor="brand.500" borderWidth={1} borderRadius={16} backgroundColor="brand.50" p={8}>
+  <Box
+    width="100%"
+    borderColor="brand.500"
+    borderWidth={1}
+    borderRadius={16}
+    backgroundColor="brand.50"
+    p={8}
+  >
     <Heading size={subHeadingSize} mb={4} color="brand.500" textAlign="left">
       Event Location
     </Heading>
@@ -192,7 +199,14 @@ const EventLocationSection = () => (
 )
 
 const DateAndTimeSection = () => (
-  <Box width="100%" borderColor="brand.500" borderWidth={1} borderRadius={16} backgroundColor="brand.50" p={8}>
+  <Box
+    width="100%"
+    borderColor="brand.500"
+    borderWidth={1}
+    borderRadius={16}
+    backgroundColor="brand.50"
+    p={8}
+  >
     <Heading size={subHeadingSize} mb={6} color="brand.500">
       Date and Time
     </Heading>
@@ -233,19 +247,30 @@ export default function SchedulePage() {
           </VStack>
 
           <Stack direction={{ base: 'column', md: 'row' }} gap={12}>
-            <VStack align="flex-start" pl={{base: 12, md: 32}} pr={{base: 12, md: 0}} gap={24} width={{ base: '100%', md: '60%' }}>
+            <VStack
+              align="flex-start"
+              pl={{ base: 12, md: 32 }}
+              pr={{ base: 12, md: 0 }}
+              gap={24}
+              width={{ base: '100%', md: '60%' }}
+            >
               <DescriptionSection />
               <EventHighlightsSection />
               <ContactSection />
             </VStack>
 
-            <VStack align="flex-start" pr={{base: 0, md: 12}} gap={12} width={{ base: '100%', md: '40%' }}>
+            <VStack
+              align="flex-start"
+              pr={{ base: 0, md: 12 }}
+              gap={12}
+              width={{ base: '100%', md: '40%' }}
+            >
               <EventLocationSection />
               <DateAndTimeSection />
             </VStack>
           </Stack>
 
-          <Box width="100%" mx="auto" mt={16} px={{ base: 12, md: 24}}>
+          <Box width="100%" mx="auto" mt={16} px={{ base: 12, md: 24 }}>
             <Box backgroundColor="brand.500" borderRadius={16} p={16}>
               <Heading size={subHeadingSize} mb={8} color="white" fontSize="3xl" textAlign="start">
                 Schedule
