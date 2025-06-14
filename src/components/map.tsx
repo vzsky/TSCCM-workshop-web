@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Container, Text } from '@chakra-ui/react';
 
 export const Map = () => (
-  <Box py={16} bg="gray.50">
+  <Box py={16} bg="brand.50">
     <Container maxW="container.xl">
       <Stack gap={8}>
         <Heading textAlign="center" size="xl" color="brand.500">
@@ -29,8 +29,10 @@ export const Map = () => (
           <Heading size="md" color="gray.700">
             Queen Sirikit National Convention Center
           </Heading>
-          <Text color="gray.600">60 Ratchadaphisek Road, Khlong Toei, Bangkok 10110, Thailand</Text>
-          <Text color="gray.600">
+          <Text color="brand.600">
+            60 Ratchadaphisek Road, Khlong Toei, Bangkok 10110, Thailand
+          </Text>
+          <Text color="brand.600">
             Located in the heart of Bangkok, easily accessible by BTS Skytrain and MRT Subway
           </Text>
         </Stack>

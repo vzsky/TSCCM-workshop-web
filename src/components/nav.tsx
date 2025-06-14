@@ -9,7 +9,7 @@ export const NavLink = ({ children, href }: { children: React.ReactNode; href: s
     as={Link}
     _hover={{
       textDecoration: 'none',
-      color: 'gray.200',
+      color: 'accent.100',
     }}
     href={href}
   >
@@ -24,14 +24,13 @@ export const Navbar = () => (
         <ChakraLink
           href="/"
           as={Link}
+          color="white"
           _hover={{
             textDecoration: 'none',
-            color: 'gray.200',
+            color: 'accent.100',
           }}
         >
-          <Heading size="lg" color="white">
-            TSCCM 2025
-          </Heading>
+          <Heading size="lg">TSCCM 2025</Heading>
         </ChakraLink>
       </Flex>
 

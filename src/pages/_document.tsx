@@ -9,13 +9,7 @@ export default class Document extends NextDocument {
     return (
       <Html suppressHydrationWarning>
         <Head>
-          <style>{`
-            html, body {
-              background-color: white;
-              margin: 0;
-              padding: 0;
-            }
-          `}</style>
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />

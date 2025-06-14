@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Heading, Text, VStack } from '@chakra-ui/react';
+import { Button } from '../components/button';
 
 const ColorSwatch = ({ color, shade }: { color: string; shade: string }) => (
   <Box
@@ -35,6 +36,15 @@ export default function PalettePage() {
         <ColorPalette name="Brand Colors" color="brand" />
         <ColorPalette name="Accent Colors" color="accent" />
       </VStack>
+      <Box py={10}>
+        <Heading>Buttons </Heading>
+        <Box m={5}>
+          <Button> Button </Button>
+        </Box>
+        <Box m={5}>
+          <Button variant="outline"> Button </Button>
+        </Box>
+      </Box>
     </Container>
   );
 }

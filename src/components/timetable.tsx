@@ -2,7 +2,7 @@ import { Box, Container, Stack, Heading, Text, Flex } from '@chakra-ui/react';
 import { Button } from './button';
 
 export const TimeTable = () => (
-  <Box py={16} bg="gray.50">
+  <Box py={16} bg="brand.50">
     <Container maxW="container.xl">
       <Stack gap={8}>
         <Heading textAlign="center" size="xl" color="brand.500">
@@ -124,7 +124,7 @@ export const TimeTable = () => (
           </Stack>
         </Box>
 
-        <Button variant="white">Download Full Schedule</Button>
+        <Button variant="outline">Download Full Schedule</Button>
       </Stack>
     </Container>
   </Box>

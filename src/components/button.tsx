@@ -1,7 +1,7 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
 import { ComponentProps } from 'react';
 
-type ButtonVariant = 'primary' | 'white';
+type ButtonVariant = 'primary' | 'outline';
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export const Button = ({ children, variant = 'primary', ...props }: ButtonProps)
         bg: 'brand.600',
       },
     },
-    white: {
+    outline: {
       bg: 'white',
       color: 'brand.500',
       border: '2px solid',

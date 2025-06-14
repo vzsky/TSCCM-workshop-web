@@ -24,7 +24,7 @@ const FeatureCard = ({
 );
 
 export const Features = () => (
-  <Box py={16} bg="gray.50">
+  <Box py={16} bg="white">
     <Container maxW="container.xl">
       <HStack gap={3} alignItems="stretch">
         <FeatureCard

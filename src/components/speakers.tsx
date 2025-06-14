@@ -1,32 +1,62 @@
-import { Box, Container, Heading, Text, Stack, Image, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Stack, Image, SimpleGrid, VStack } from '@chakra-ui/react';
 
 const speakers = [
   {
-    name: 'Dr. Sarah Johnson',
-    title: 'Director of Critical Care, Bangkok Medical Center',
-    description:
-      'With over 15 years of experience in critical care medicine, Dr. Johnson specializes in advanced life support and emergency medicine. She has published numerous papers on critical care protocols in Southeast Asia.',
-    imageSrc: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop',
+    name: 'Anupol Panitchote, MD',
+    title:
+      'Division of Critical Care, Department of Medicine, Faculty of Medicine, Khon Kaen University, Khon Kaen, Thailand',
+    descriptions: [
+      'Deputy Dean of Artificial intelligence and data science',
+      'Associate Professor and intensivist at the Division of Critical Care, Department of Medicine, Research interest: data science, AI, health informatics, critical care medicine',
+      'Research interest: data science, AI, health informatics, critical care medicine',
+    ],
+    imageSrc: '/static/Panitchote.avif',
   },
   {
-    name: 'Dr. Michael Chen',
-    title: 'Head of ICU, Singapore General Hospital',
-    description:
-      'Dr. Chen is a pioneer in implementing AI-driven critical care solutions. His research focuses on predictive analytics in ICU management and has led several international studies on critical care outcomes.',
-    imageSrc: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop',
+    name: 'Tanuwong Viarasilpa, MD',
+    title:
+      'Division of Critical Care, Department of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand',
+    descriptions: [
+      'Instructor and intensivist at the Division of Critical Care, Department of Medicine, Siriraj Hospital, Mahidol University, Bangkok, Thailand',
+      'Special interest in neurocritical care',
+    ],
+    imageSrc: '/static/Viarasilpa.avif',
   },
   {
-    name: 'Dr. Emily Wong',
-    title: 'Professor of Critical Care Medicine, University of Hong Kong',
-    description:
-      'A leading expert in pediatric critical care, Dr. Wong has developed innovative treatment protocols for critically ill children. She serves on several international critical care committees.',
-    imageSrc: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop',
+    name: 'Sitthichok Chaichulee, PhD',
+    title:
+      'Department of Biomedical Sciences and Biomedical Engineering, Faculty of Medicine, Prince of Songkla University, Thailand',
+    descriptions: [
+      'Deputy Director of Digital Innovation and Data Analytics',
+      'esearch interests: Artificial Intelligence, Medical Image Processing, Big Data Analysis, Health Informatics, Interoperability in Healthcare',
+    ],
+    imageSrc: '/static/Chaichulee.avif',
+  },
+  {
+    name: 'Preut Assawaworrarit, MD',
+    title:
+      'Division of Critical Care, Department of Medicine, Faculty of Medicine, Chulalongkorn University, Bangkok, Thailand',
+    descriptions: [
+      'Lecturer and intensivist',
+      'Research interests: Critical care medicine, medical informatics',
+    ],
+    imageSrc: '/static/Assawaworrarit.avif',
+  },
+  {
+    name: 'Evelyn Goh',
+    title: 'PhD Researcher in AI and Biomedical Engineering, National University of Singapore',
+    descriptions: [
+      'Specializing in AI applications for public health and clinical usage.',
+      'Bridging deep learning, epidemiology, and clinical translation across Southeast Asia.',
+    ],
+    imageSrc: '/static/Goh.jpg',
   },
   {
     name: 'Dr. Robert Kim',
     title: 'Emergency Medicine Specialist, Seoul National University Hospital',
-    description:
-      'Dr. Kim specializes in disaster medicine and mass casualty management. He has led emergency response teams in multiple international crises and developed training programs for emergency medical teams.',
+    descriptions: [
+      'A leading expert in pediatric critical care, Dr. Wong has developed innovative treatment protocols for critically ill children. She serves on several international critical care committees.',
+    ],
     imageSrc: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop',
   },
 ];
@@ -34,28 +64,40 @@ const speakers = [
 const Speaker = ({
   name,
   title,
-  description,
+  descriptions,
   imageSrc,
 }: {
   name: string;
   title: string;
-  description: string;
+  descriptions: string[];
   imageSrc: string;
 }) => (
   <Box textAlign="center">
     <Box mx="auto" w="200px" h="200px" borderRadius="full" overflow="hidden" mb={4} boxShadow="lg">
       <Image src={imageSrc} alt={name} objectFit="cover" w="100%" h="100%" />
     </Box>
-    <Heading size="md" mb={2}>
-      {' '}
-      {name}{' '}
+    <Heading size="md" mb={2} color="brand.500">
+      {name}
     </Heading>
-    <Text color="brand.500" fontWeight="medium" mb={2}>
+    <Text color="gray.600" fontWeight="medium" mb={2}>
       {title}
     </Text>
-    <Text color="gray.600" fontSize="sm">
-      {description}
-    </Text>
+    <Box
+      as="ul"
+      pl={6}
+      color="gray.500"
+      fontSize="sm"
+      textAlign="left"
+      mb={2}
+      listStyleType="disc"
+      listStylePosition="outside"
+    >
+      {descriptions.map((desc, index) => (
+        <Box as="li" key={index} mb={1}>
+          {desc}
+        </Box>
+      ))}
+    </Box>
   </Box>
 );
 
@@ -67,7 +109,7 @@ export const Speakers = () => (
           Featured Speakers
         </Heading>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={8}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
           {speakers.map((speaker) => (
             <Speaker key={speaker.name} {...speaker} />
           ))}

@@ -1,6 +1,9 @@
-import { Box, Container, Heading, Text, VStack, HStack, Link } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, HStack } from '@chakra-ui/react';
 import { Navbar } from '../components/nav';
 import { Footer } from '../components/footer';
+import { Button } from '../components/button';
+import { REGISTRATION_LINK } from '../constants';
+import Link from 'next/link';
 
 interface ScheduleItem {
   time: string;
@@ -70,13 +73,13 @@ const scheduleItems: ScheduleItem[] = [
 const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
   <Box py={4}>
     <HStack gap={8} alignItems="start">
-      <Text fontWeight="bold" minW="80px">
+      <Text fontWeight="bold" minW="80px" color="brand.500">
         {time}
       </Text>
       <VStack alignItems="start" gap={1}>
         <Text fontWeight="medium">{title}</Text>
         {speaker && (
-          <Text fontSize="sm" color="gray.600">
+          <Text fontSize="sm" color="accent.500">
             {speaker}
           </Text>
         )}
@@ -86,7 +89,7 @@ const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
 );
 
 const InfoSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <Box mb={8}>
+  <Box>
     <Heading size="md" mb={4} color="brand.500">
       {title}
     </Heading>
@@ -100,54 +103,68 @@ export default function SchedulePage() {
       <Navbar />
       <Container maxW="container.xl" py={20}>
         <VStack gap={12} alignItems="stretch">
-          {/* Header Section */}
-          <VStack gap={6} alignItems="center" textAlign="center">
-            <Heading size="2xl">Schedule</Heading>
-            <Text fontSize="xl" color="gray.600" maxW="2xl">
+          {/* Hero Section */}
+          <VStack gap={4} alignItems="center" textAlign="center">
+            <Heading size="2xl" color="brand.500">
+              Schedule
+            </Heading>
+            <Text fontSize="xl" color="accent.500" maxW="2xl">
               Join us for a day of insightful discussions and presentations on Data Warehouse and AI
               in Intensive Care Medicine
             </Text>
+            <Button as={Link} href={REGISTRATION_LINK}>
+              Register Now
+            </Button>
           </VStack>
 
           {/* Description Section */}
           <InfoSection title="Description">
-            <Text>
+            <Text color="accent.500">
               Join our <em>Data Warehouse and AI in Intensive Care Medicine</em>, a special workshop
               hosted as a part of the 14th Critical Care Conference in Thailand, at the Bhumisiri
               Mangkhalanusorn Building, Chulalongkorn Hospital in Bangkok.
             </Text>
-            <Text mt={4}>
+            <Text mt={4} color="accent.500">
               Reflecting on this year's theme, "Together in Critical Care," we will delve into the
               roles of AI and technology towards critical care. Our goal is to foster meaningful
               discussions, share cutting-edge knowledge, and explore innovative practices that
               improve patient outcomes using advanced technology in the AI era.
             </Text>
-            <Text mt={4}>
-              The event will be held on July 19th, 2025. The registration opens at 8:00.
+            <Text mt={4} color="accent.500">
+              This workshop is designed for healthcare professionals, researchers, and anyone
+              interested in the intersection of AI and critical care medicine. Whether you're a
+              seasoned expert or just starting to explore this field, you'll find valuable insights
+              and networking opportunities.
             </Text>
           </InfoSection>
 
           {/* Event Highlights Section */}
           <InfoSection title="Event Highlights">
-            <VStack alignItems="start" gap={4}>
+            <VStack gap={6} alignItems="stretch">
               <Box>
-                <Text fontWeight="bold">Primer on AI, LLM, and Data Bias Series</Text>
-                <Text>
+                <Text fontWeight="bold" color="brand.500">
+                  Primer on AI, LLM, and Data Bias Series
+                </Text>
+                <Text color="accent.500">
                   Spend two hours on the basics of technology behind artificial intelligence and
                   large language models. The topics also cover the biases and vulnerabilities of
                   these AI systems and how to mitigate them.
                 </Text>
               </Box>
               <Box>
-                <Text fontWeight="bold">Research, Education, and Policy Development in AI Era</Text>
-                <Text>
+                <Text fontWeight="bold" color="brand.500">
+                  Research, Education, and Policy Development in AI Era
+                </Text>
+                <Text color="accent.500">
                   Brainstorm and exchange ideas on integrating safe and inclusive AI-human systems
                   in the context of teaching and managing critical care.
                 </Text>
               </Box>
               <Box>
-                <Text fontWeight="bold">Success Stories</Text>
-                <Text>
+                <Text fontWeight="bold" color="brand.500">
+                  Success Stories
+                </Text>
+                <Text color="accent.500">
                   Listen to smart ICU initiatives from frontier hospitals all over Thailand and
                   cutting-edge solutions from partnered companies.
                 </Text>
@@ -157,48 +174,38 @@ export default function SchedulePage() {
 
           {/* Contact Information Section */}
           <InfoSection title="Contact Information">
-            <Text>
+            <Text color="accent.500">
               Visit the main website for the conference at{' '}
-              <Link href="https://www.tsccm2025.com" color="brand.500">
-                https://www.tsccm2025.com
-              </Link>{' '}
-              or send us an email to{' '}
-              <Link href="mailto:tsccmconference@gmail.com" color="brand.500">
-                tsccmconference@gmail.com
-              </Link>
+              <Link href="https://www.tsccm2025.com">https://www.tsccm2025.com</Link> or send us an
+              email to{' '}
+              <Link href="mailto:tsccmconference@gmail.com">tsccmconference@gmail.com</Link>
             </Text>
           </InfoSection>
 
           {/* Event Location Section */}
           <InfoSection title="Event Location">
-            <VStack alignItems="start" gap={2}>
-              <Text fontWeight="bold">King Chulalongkorn Memorial Hospital</Text>
-              <Text>Bhumisiri Mangkhalanusorn Bldg (12th floor)</Text>
-              <Text>1873 Rama IV Rd, Pathum Wan, Bangkok 10330, Thailand</Text>
-            </VStack>
+            <Text color="accent.500">
+              Bhumisiri Mangkhalanusorn Building, Chulalongkorn Hospital, Bangkok, Thailand
+            </Text>
           </InfoSection>
 
           {/* Date and Time Section */}
           <InfoSection title="Date and Time">
-            <VStack alignItems="start" gap={2}>
-              <Text>July 19, 2025</Text>
-              <Text>8:00 - 17:00</Text>
-            </VStack>
+            <Text color="accent.500">February 15, 2025, 08:30 - 17:00</Text>
           </InfoSection>
-
-          <Box borderTop="1px solid" borderColor="gray.200" my={8} />
 
           {/* Schedule Section */}
           <Box>
-            <Heading size="lg" mb={6}>
+            <Heading size="lg" mb={6} color="brand.500">
               Schedule
             </Heading>
             <VStack gap={0} alignItems="stretch">
               {scheduleItems.map((item, index) => (
                 <Box
                   key={index}
-                  borderBottom={index < scheduleItems.length - 1 ? '1px solid' : 'none'}
-                  borderColor="gray.200"
+                  borderBottom="1px"
+                  borderColor="accent.200"
+                  _last={{ borderBottom: 'none' }}
                 >
                   <ScheduleItem {...item} />
                 </Box>

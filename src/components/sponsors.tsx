@@ -1,7 +1,7 @@
 import { Heading, Box, Container, Stack, Text, Image, SimpleGrid } from '@chakra-ui/react';
 
 export const Sponsors = () => (
-  <Box py={16} bg="gray.50">
+  <Box py={16} bg="white">
     <Container maxW="container.xl">
       <Stack gap={12}>
         <Heading textAlign="center" size="xl" color="brand.500">
