@@ -1,7 +1,7 @@
-import { Box, Flex, Stack, Container, Heading, Text } from '@chakra-ui/react';
-import { Button } from './button';
-import Link from 'next/link';
-import { REGISTRATION_LINK } from '../constants';
+import { Box, Flex, Stack, Container, Heading, Text } from '@chakra-ui/react'
+import { Button } from './button'
+import Link from 'next/link'
+import { REGISTRATION_LINK } from '../constants'
 
 export const HeadingComponent = () => (
   <Box bg="white" color="brand.500">
@@ -80,4 +80,4 @@ export const HeadingComponent = () => (
       </Flex>
     </Container>
   </Box>
-);
+)

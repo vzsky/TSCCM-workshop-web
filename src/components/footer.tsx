@@ -3,16 +3,23 @@ import {
   Container,
   Text,
   Stack,
-  IconButton,
-  Heading,
   HStack,
   Link as ChakraLink,
   VStack,
-} from '@chakra-ui/react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { Button } from './button';
-import { REGISTRATION_LINK, CRITICAL_CARE_LINK, TSCCM_LINK, EMAIL_LINK } from '../constants';
-import Link from 'next/link';
+  LinkProps,
+} from '@chakra-ui/react'
+import { Button } from './button'
+import { REGISTRATION_LINK, CRITICAL_CARE_LINK, TSCCM_LINK, EMAIL_LINK } from '../constants'
+import Link from 'next/link'
+
+const FooterLink = (props: LinkProps) => (
+  <ChakraLink
+    fontWeight="normal"
+    color="brand.200"
+    _hover={{ textDecoration: 'underline', color: 'white' }}
+    {...props}
+  />
+)
 
 export const Footer = () => (
   <Box bg={'brand.900'} color={'brand.200'} py={8}>
@@ -37,31 +44,13 @@ export const Footer = () => (
         </VStack>
 
         <HStack gap={10} mt={4}>
-          <ChakraLink
-            href={TSCCM_LINK}
-            color="brand.200"
-            _hover={{ color: 'white', textDecoration: 'underline' }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <FooterLink href={TSCCM_LINK} target="_blank" rel="noopener noreferrer">
             TSCCM 2025
-          </ChakraLink>
-          <ChakraLink
-            href={CRITICAL_CARE_LINK}
-            color="brand.200"
-            _hover={{ color: 'white', textDecoration: 'underline' }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </FooterLink>
+          <FooterLink href={CRITICAL_CARE_LINK} target="_blank" rel="noopener noreferrer">
             Critical Care Thai
-          </ChakraLink>
-          <ChakraLink
-            href={EMAIL_LINK}
-            color="brand.200"
-            _hover={{ color: 'white', textDecoration: 'underline' }}
-          >
-            Email Us
-          </ChakraLink>
+          </FooterLink>
+          <FooterLink href={EMAIL_LINK}>Email Us</FooterLink>
         </HStack>
 
         {/* Right: Social Icons
@@ -83,4 +72,4 @@ export const Footer = () => (
       </Text>
     </Container>
   </Box>
-);
+)

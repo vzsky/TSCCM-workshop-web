@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, Stack, Image, SimpleGrid, VStack } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Stack, Image, SimpleGrid, VStack } from '@chakra-ui/react'
 
 const speakers = [
   {
@@ -59,7 +59,7 @@ const speakers = [
     ],
     imageSrc: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop',
   },
-];
+]
 
 const Speaker = ({
   name,
@@ -67,10 +67,10 @@ const Speaker = ({
   descriptions,
   imageSrc,
 }: {
-  name: string;
-  title: string;
-  descriptions: string[];
-  imageSrc: string;
+  name: string
+  title: string
+  descriptions: string[]
+  imageSrc: string
 }) => (
   <Box textAlign="center">
     <Box mx="auto" w="200px" h="200px" borderRadius="full" overflow="hidden" mb={4} boxShadow="lg">
@@ -99,13 +99,13 @@ const Speaker = ({
       ))}
     </Box>
   </Box>
-);
+)
 
 export const Speakers = () => (
   <Box py={16} bg="white">
     <Container maxW="container.xl">
       <Stack gap={12}>
-        <Heading textAlign="center" size="xl" color="brand.500">
+        <Heading textAlign="center" size="3xl" color="brand.500">
           Featured Speakers
         </Heading>
 
@@ -117,4 +117,4 @@ export const Speakers = () => (
       </Stack>
     </Container>
   </Box>
-);
+)

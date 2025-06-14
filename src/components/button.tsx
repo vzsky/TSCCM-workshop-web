@@ -1,13 +1,13 @@
-import { Button as ChakraButton } from '@chakra-ui/react';
-import { ComponentProps } from 'react';
+import { Button as ChakraButton } from '@chakra-ui/react'
+import { ComponentProps } from 'react'
 
-type ButtonVariant = 'primary' | 'outline';
+type ButtonVariant = 'primary' | 'outline'
 
 type ButtonProps = {
-  children: React.ReactNode;
-  variant?: ButtonVariant;
-  href?: string;
-} & Omit<ComponentProps<typeof ChakraButton>, 'variant'>;
+  children: React.ReactNode
+  variant?: ButtonVariant
+  href?: string
+} & Omit<ComponentProps<typeof ChakraButton>, 'variant'>
 
 export const Button = ({ children, variant = 'primary', ...props }: ButtonProps) => {
   const variants: Record<ButtonVariant, ComponentProps<typeof ChakraButton>> = {
@@ -27,11 +27,11 @@ export const Button = ({ children, variant = 'primary', ...props }: ButtonProps)
         bg: 'brand.50',
       },
     },
-  };
+  }
 
   return (
     <ChakraButton size="lg" {...variants[variant]} {...props}>
       {children}
     </ChakraButton>
-  );
-};
+  )
+}

@@ -1,37 +1,30 @@
-import { Box, Flex, Heading, Stack, Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Flex, Heading, Stack, Link as ChakraLink } from '@chakra-ui/react'
+import Link from 'next/link'
+import { LinkProps } from '@chakra-ui/react'
 
-export const NavLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
+export const NavLink = ({ children, href }: LinkProps) => (
   <ChakraLink
     px={2}
     py={1}
-    color="white"
+    color="brand.100"
     as={Link}
     _hover={{
       textDecoration: 'none',
-      color: 'accent.100',
+      color: 'white',
     }}
     href={href}
   >
     {children}
   </ChakraLink>
-);
+)
 
 export const Navbar = () => (
   <Box bg={'brand.500'} px={4} boxShadow="sm">
     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       <Flex alignItems={'center'}>
-        <ChakraLink
-          href="/"
-          as={Link}
-          color="white"
-          _hover={{
-            textDecoration: 'none',
-            color: 'accent.100',
-          }}
-        >
+        <NavLink href="/">
           <Heading size="lg">TSCCM 2025</Heading>
-        </ChakraLink>
+        </NavLink>
       </Flex>
 
       <Flex alignItems={'center'}>
@@ -41,4 +34,4 @@ export const Navbar = () => (
       </Flex>
     </Flex>
   </Box>
-);
+)

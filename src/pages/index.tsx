@@ -1,10 +1,10 @@
-import { Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react'
 
-import { Footer } from '../components/footer';
-import { Speakers } from '../components/speakers';
-import { Features } from '../components/features';
-import { Sponsors } from '../components/sponsors';
-import { HeadingComponent } from '../components/heading';
+import { Footer } from '../components/footer'
+import { Speakers } from '../components/speakers'
+import { Features } from '../components/features'
+import { Sponsors } from '../components/sponsors'
+import { HeadingComponent } from '../components/heading'
 
 export default function Page() {
   return (
@@ -15,5 +15,5 @@ export default function Page() {
       <Sponsors />
       <Footer />
     </Box>
-  );
+  )
 }

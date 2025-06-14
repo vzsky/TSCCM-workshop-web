@@ -1,14 +1,17 @@
-import { Box, Container, Heading, Text, VStack, HStack } from '@chakra-ui/react';
-import { Navbar } from '../components/nav';
-import { Footer } from '../components/footer';
-import { Button } from '../components/button';
-import { REGISTRATION_LINK } from '../constants';
-import Link from 'next/link';
+import { Box, Container, Heading, Text, VStack, HStack, Stack } from '@chakra-ui/react'
+import { Navbar } from '../components/nav'
+import { Footer } from '../components/footer'
+import { Button } from '../components/button'
+import { EMAIL_LINK, REGISTRATION_LINK, TSCCM_LINK } from '../constants'
+import Link from 'next/link'
+import { Map } from '../components/map'
+import { FiCalendar, FiClock } from 'react-icons/fi'
+import { InlineLink } from '../components/inline-link'
 
 interface ScheduleItem {
-  time: string;
-  title: string;
-  speaker?: string;
+  time: string
+  title: string
+  speaker?: string
 }
 
 const scheduleItems: ScheduleItem[] = [
@@ -68,7 +71,12 @@ const scheduleItems: ScheduleItem[] = [
     title: 'Recreational Activity: Muay Thai',
     speaker: 'TBA',
   },
-];
+]
+
+const subHeadingSize = {
+  base: 'xl',
+  lg: '2xl',
+} as const
 
 const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
   <Box py={4}>
@@ -79,23 +87,131 @@ const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
       <VStack alignItems="start" gap={1}>
         <Text fontWeight="medium">{title}</Text>
         {speaker && (
-          <Text fontSize="sm" color="accent.500">
+          <Text fontSize="sm" color="gray.500">
             {speaker}
           </Text>
         )}
       </VStack>
     </HStack>
   </Box>
-);
+)
 
-const InfoSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
+const DescriptionSection = () => (
   <Box>
-    <Heading size="md" mb={4} color="brand.500">
-      {title}
+    <Heading size={subHeadingSize} mb={4} color="brand.500">
+      Description
     </Heading>
-    {children}
+    <Text ml={5} color="gray.500">
+      Join our <em>Data Warehouse and AI in Intensive Care Medicine</em>, a special workshop hosted
+      as a part of the 14th Critical Care Conference in Thailand, at the Bhumisiri Mangkhalanusorn
+      Building, Chulalongkorn Hospital in Bangkok.
+    </Text>
+    <Text ml={5} mt={4} color="gray.500">
+      Reflecting on this year's theme, "Together in Critical Care," we will delve into the roles of
+      AI and technology towards critical care. Our goal is to foster meaningful discussions, share
+      cutting-edge knowledge, and explore innovative practices that improve patient outcomes using
+      advanced technology in the AI era.
+    </Text>
+    <Text ml={5} mt={4} color="gray.500">
+      This workshop is designed for healthcare professionals, researchers, and anyone interested in
+      the intersection of AI and critical care medicine. Whether you're a seasoned expert or just
+      starting to explore this field, you'll find valuable insights and networking opportunities.
+    </Text>
   </Box>
-);
+)
+
+const EventHighlightsSection = () => (
+  <Box>
+    <Heading size={subHeadingSize} mb={4} color="brand.500">
+      Event Highlights
+    </Heading>
+    <VStack ml={5} gap={6} alignItems="stretch">
+      <Box>
+        <Text fontWeight="bold" color="gray.700">
+          Primer on AI, LLM, and Data Bias Series
+        </Text>
+        <Text color="gray.500">
+          Spend two hours on the basics of technology behind artificial intelligence and large
+          language models. The topics also cover the biases and vulnerabilities of these AI systems
+          and how to mitigate them.
+        </Text>
+      </Box>
+      <Box>
+        <Text fontWeight="bold" color="gray.700">
+          Research, Education, and Policy Development in AI Era
+        </Text>
+        <Text color="gray.500">
+          Brainstorm and exchange ideas on integrating safe and inclusive AI-human systems in the
+          context of teaching and managing critical care.
+        </Text>
+      </Box>
+      <Box>
+        <Text fontWeight="bold" color="gray.700">
+          Success Stories
+        </Text>
+        <Text color="gray.500">
+          Listen to smart ICU initiatives from frontier hospitals all over Thailand and cutting-edge
+          solutions from partnered companies.
+        </Text>
+      </Box>
+    </VStack>
+  </Box>
+)
+
+const ContactSection = () => (
+  <Box>
+    <Heading size={subHeadingSize} mb={4} color="brand.500">
+      Contact Information
+    </Heading>
+    <Text ml={5} color="gray.500">
+      Visit the main website for the conference at{' '}
+      <InlineLink href={TSCCM_LINK}> {TSCCM_LINK.split('https://')[1]} </InlineLink> or send us an
+      email to <InlineLink href={EMAIL_LINK}> {EMAIL_LINK.split('mailto:')[1]} </InlineLink>
+    </Text>
+  </Box>
+)
+
+const EventLocationSection = () => (
+  <Box width="100%">
+    <Heading size={subHeadingSize} mb={4} color="brand.500" textAlign="left">
+      Event Location
+    </Heading>
+    <VStack gap={3} width="100%" align="center">
+      <Heading size={subHeadingSize} color="gray.700" textAlign="center">
+        King Chulalongkorn Memorial Hospital
+      </Heading>
+      <Text color="brand.600" textAlign="center">
+        Bhumisiri Mangkhalanusorn Bldg (12th floor)
+      </Text>
+      <Text color="brand.600" textAlign="center">
+        1873 Rama IV Rd, Pathum Wan, Bangkok 10330, Thailand
+      </Text>
+      <Map />
+    </VStack>
+  </Box>
+)
+
+const DateAndTimeSection = () => (
+  <Box width="100%">
+    <Heading size={subHeadingSize} mb={4} color="brand.500">
+      Date and Time
+    </Heading>
+    <VStack ml={5} align="flex-start" gap={6}>
+      <HStack gap={4}>
+        <Box as={FiCalendar} fontSize="xl" color="brand.800" />
+        <Text fontSize="lg" color="gray.500">
+          July 19, 2025
+        </Text>
+      </HStack>
+      <HStack gap={4}>
+        <Box as={FiClock} fontSize="xl" color="brand.800" />
+        <Text fontSize="lg" color="gray.500">
+          8:00 - 17:00
+        </Text>
+      </HStack>
+    </VStack>
+  </Box>
+)
 
 export default function SchedulePage() {
   return (
@@ -103,12 +219,11 @@ export default function SchedulePage() {
       <Navbar />
       <Container maxW="container.xl" py={20}>
         <VStack gap={12} alignItems="stretch">
-          {/* Hero Section */}
           <VStack gap={4} alignItems="center" textAlign="center">
-            <Heading size="2xl" color="brand.500">
+            <Heading textAlign="center" size="4xl" color="brand.500">
               Schedule
             </Heading>
-            <Text fontSize="xl" color="accent.500" maxW="2xl">
+            <Text fontSize="xl" color="gray.500" maxW="2xl">
               Join us for a day of insightful discussions and presentations on Data Warehouse and AI
               in Intensive Care Medicine
             </Text>
@@ -117,96 +232,26 @@ export default function SchedulePage() {
             </Button>
           </VStack>
 
-          {/* Description Section */}
-          <InfoSection title="Description">
-            <Text color="accent.500">
-              Join our <em>Data Warehouse and AI in Intensive Care Medicine</em>, a special workshop
-              hosted as a part of the 14th Critical Care Conference in Thailand, at the Bhumisiri
-              Mangkhalanusorn Building, Chulalongkorn Hospital in Bangkok.
-            </Text>
-            <Text mt={4} color="accent.500">
-              Reflecting on this year's theme, "Together in Critical Care," we will delve into the
-              roles of AI and technology towards critical care. Our goal is to foster meaningful
-              discussions, share cutting-edge knowledge, and explore innovative practices that
-              improve patient outcomes using advanced technology in the AI era.
-            </Text>
-            <Text mt={4} color="accent.500">
-              This workshop is designed for healthcare professionals, researchers, and anyone
-              interested in the intersection of AI and critical care medicine. Whether you're a
-              seasoned expert or just starting to explore this field, you'll find valuable insights
-              and networking opportunities.
-            </Text>
-          </InfoSection>
-
-          {/* Event Highlights Section */}
-          <InfoSection title="Event Highlights">
-            <VStack gap={6} alignItems="stretch">
-              <Box>
-                <Text fontWeight="bold" color="brand.500">
-                  Primer on AI, LLM, and Data Bias Series
-                </Text>
-                <Text color="accent.500">
-                  Spend two hours on the basics of technology behind artificial intelligence and
-                  large language models. The topics also cover the biases and vulnerabilities of
-                  these AI systems and how to mitigate them.
-                </Text>
-              </Box>
-              <Box>
-                <Text fontWeight="bold" color="brand.500">
-                  Research, Education, and Policy Development in AI Era
-                </Text>
-                <Text color="accent.500">
-                  Brainstorm and exchange ideas on integrating safe and inclusive AI-human systems
-                  in the context of teaching and managing critical care.
-                </Text>
-              </Box>
-              <Box>
-                <Text fontWeight="bold" color="brand.500">
-                  Success Stories
-                </Text>
-                <Text color="accent.500">
-                  Listen to smart ICU initiatives from frontier hospitals all over Thailand and
-                  cutting-edge solutions from partnered companies.
-                </Text>
-              </Box>
+          <Stack direction={{ base: 'column', md: 'row' }} gap={12}>
+            <VStack align="flex-start" gap={12} width={{ base: '100%', md: '60%' }}>
+              <DescriptionSection />
+              <EventHighlightsSection />
+              <ContactSection />
             </VStack>
-          </InfoSection>
 
-          {/* Contact Information Section */}
-          <InfoSection title="Contact Information">
-            <Text color="accent.500">
-              Visit the main website for the conference at{' '}
-              <Link href="https://www.tsccm2025.com">https://www.tsccm2025.com</Link> or send us an
-              email to{' '}
-              <Link href="mailto:tsccmconference@gmail.com">tsccmconference@gmail.com</Link>
-            </Text>
-          </InfoSection>
+            <VStack align="flex-start" gap={12} width={{ base: '100%', md: '40%' }}>
+              <EventLocationSection />
+              <DateAndTimeSection />
+            </VStack>
+          </Stack>
 
-          {/* Event Location Section */}
-          <InfoSection title="Event Location">
-            <Text color="accent.500">
-              Bhumisiri Mangkhalanusorn Building, Chulalongkorn Hospital, Bangkok, Thailand
-            </Text>
-          </InfoSection>
-
-          {/* Date and Time Section */}
-          <InfoSection title="Date and Time">
-            <Text color="accent.500">February 15, 2025, 08:30 - 17:00</Text>
-          </InfoSection>
-
-          {/* Schedule Section */}
-          <Box>
-            <Heading size="lg" mb={6} color="brand.500">
+          <Box width="100%" maxW="800px" mx="auto">
+            <Heading size={subHeadingSize} mb={6} color="brand.500" textAlign="center">
               Schedule
             </Heading>
-            <VStack gap={0} alignItems="stretch">
+            <VStack gap={4} alignItems="stretch">
               {scheduleItems.map((item, index) => (
-                <Box
-                  key={index}
-                  borderBottom="1px"
-                  borderColor="accent.200"
-                  _last={{ borderBottom: 'none' }}
-                >
+                <Box key={index} bg="gray.50" p={4} borderRadius="lg" boxShadow="sm">
                   <ScheduleItem {...item} />
                 </Box>
               ))}
@@ -216,5 +261,5 @@ export default function SchedulePage() {
       </Container>
       <Footer />
     </>
-  );
+  )
 }

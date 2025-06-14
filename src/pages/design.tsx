@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Heading, Text, VStack } from '@chakra-ui/react';
-import { Button } from '../components/button';
+import { Box, Container, Grid, Heading, Text, VStack } from '@chakra-ui/react'
+import { Button } from '../components/button'
 
 const ColorSwatch = ({ color, shade }: { color: string; shade: string }) => (
   <Box
@@ -15,7 +15,7 @@ const ColorSwatch = ({ color, shade }: { color: string; shade: string }) => (
       {color}.{shade}
     </Text>
   </Box>
-);
+)
 
 const ColorPalette = ({ name, color }: { name: string; color: string }) => (
   <VStack gap={4} alignItems="stretch">
@@ -26,7 +26,7 @@ const ColorPalette = ({ name, color }: { name: string; color: string }) => (
       ))}
     </Grid>
   </VStack>
-);
+)
 
 export default function PalettePage() {
   return (
@@ -46,5 +46,5 @@ export default function PalettePage() {
         </Box>
       </Box>
     </Container>
-  );
+  )
 }

@@ -1,14 +1,14 @@
-import { Heading, Text, Box, Container, HStack, Icon } from '@chakra-ui/react';
-import { MdHealthAndSafety, MdSchool, MdLocalHospital, MdPolicy } from 'react-icons/md';
+import { Heading, Text, Box, Container, HStack, Stack, Icon } from '@chakra-ui/react'
+import { MdHealthAndSafety, MdSchool, MdLocalHospital, MdPolicy } from 'react-icons/md'
 
 const FeatureCard = ({
   title,
   description,
   icon,
 }: {
-  title: string;
-  description: string;
-  icon: React.ElementType;
+  title: string
+  description: string
+  icon: React.ElementType
 }) => (
   <HStack gap={0} alignItems="stretch">
     <Box p={6} bg="white" borderRadius="lg" boxShadow="sm" flex="1">
@@ -21,12 +21,12 @@ const FeatureCard = ({
       </Box>
     </Box>
   </HStack>
-);
+)
 
 export const Features = () => (
   <Box py={16} bg="white">
     <Container maxW="container.xl">
-      <HStack gap={3} alignItems="stretch">
+      <Stack direction={{ base: 'column', md: 'row' }} gap={3} alignItems="stretch">
         <FeatureCard
           icon={MdHealthAndSafety}
           title="Roles of AI in Intensive Care"
@@ -50,7 +50,7 @@ export const Features = () => (
           title="AI Policy Development"
           description="Take part in establishing ethical frameworks and regulations for responsible AI adoption in healthcare."
         />
-      </HStack>
+      </Stack>
     </Container>
   </Box>
-);
+)
