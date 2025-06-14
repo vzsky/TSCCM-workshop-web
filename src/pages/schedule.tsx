@@ -233,7 +233,7 @@ export default function SchedulePage() {
           </VStack>
 
           <Stack direction={{ base: 'column', md: 'row' }} gap={12}>
-            <VStack align="flex-start" px={32} gap={12} width={{ base: '100%', md: '60%' }}>
+            <VStack align="flex-start" pl={{base: 12, md: 32}} pr={{base: 12, md: 0}} gap={24} width={{ base: '100%', md: '60%' }}>
               <DescriptionSection />
               <EventHighlightsSection />
               <ContactSection />
