@@ -277,7 +277,13 @@ export default function SchedulePage() {
               </Heading>
               <VStack gap={4} alignItems="stretch">
                 {scheduleItems.map((item, index) => (
-                  <Box key={index} bg="gray.50" p={{ base: 0, md: 4 }} borderRadius="lg" boxShadow="sm">
+                  <Box
+                    key={index}
+                    bg="gray.50"
+                    p={{ base: 0, md: 4 }}
+                    borderRadius="lg"
+                    boxShadow="sm"
+                  >
                     <ScheduleItem {...item} />
                   </Box>
                 ))}
