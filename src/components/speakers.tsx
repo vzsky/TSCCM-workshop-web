@@ -28,7 +28,7 @@ const speakers = [
       'Department of Biomedical Sciences and Biomedical Engineering, Faculty of Medicine, Prince of Songkla University, Thailand',
     descriptions: [
       'Deputy Director of Digital Innovation and Data Analytics',
-      'esearch interests: Artificial Intelligence, Medical Image Processing, Big Data Analysis, Health Informatics, Interoperability in Healthcare',
+      'Research interests: Artificial Intelligence, Medical Image Processing, Big Data Analysis, Health Informatics, Interoperability in Healthcare',
     ],
     imageSrc: '/static/Chaichulee.avif',
   },
@@ -52,12 +52,16 @@ const speakers = [
     imageSrc: '/static/Goh.jpg',
   },
   {
-    name: 'Dr. Robert Kim',
-    title: 'Emergency Medicine Specialist, Seoul National University Hospital',
+    name: 'Assoc. Prof. Mengling Feng',
+    title:
+      'Director of AI for Public Health (AI4PH) Program, National University of Singapore (NUS)',
     descriptions: [
-      'A leading expert in pediatric critical care, Dr. Wong has developed innovative treatment protocols for critically ill children. She serves on several international critical care committees.',
+      'Leads AI4PH and B.MAD domains at NUS, focusing on healthcare AI research and innovation',
+      'Published nearly 200 papers with 13,000+ citations in top-tier journals and conferences',
+      'Secured over SGD 10M in funding; organizes annual Singapore Healthcare AI Datathon',
+      "Co-founded FathomX, an AI startup empowering Asian women's health, valued at USD 15M",
     ],
-    imageSrc: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop',
+    imageSrc: '/static/Feng.avif',
   },
 ]
 
