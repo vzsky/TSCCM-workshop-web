@@ -79,8 +79,8 @@ const subHeadingSize = {
 } as const
 
 const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
-  <Box py={4}>
-    <HStack gap={8} alignItems="start">
+  <Box px={8} py={4}>
+    <Stack direction={{ base: "column", md: "row" }} gap={6} alignItems="start">
       <Text fontWeight="bold" minW="80px" color="brand.500">
         {time}
       </Text>
@@ -92,7 +92,7 @@ const ScheduleItem = ({ time, title, speaker }: ScheduleItem) => (
           </Text>
         )}
       </VStack>
-    </HStack>
+    </Stack>
   </Box>
 )
 
@@ -101,18 +101,18 @@ const DescriptionSection = () => (
     <Heading size={subHeadingSize} mb={4} color="brand.500">
       Description
     </Heading>
-    <Text ml={5} color="gray.500">
+    <Text color="gray.500">
       Join our <em>Data Warehouse and AI in Intensive Care Medicine</em>, a special workshop hosted
       as a part of the 14th Critical Care Conference in Thailand, at the Bhumisiri Mangkhalanusorn
       Building, Chulalongkorn Hospital in Bangkok.
     </Text>
-    <Text ml={5} mt={4} color="gray.500">
+    <Text mt={4} color="gray.500">
       Reflecting on this year's theme, "Together in Critical Care," we will delve into the roles of
       AI and technology towards critical care. Our goal is to foster meaningful discussions, share
       cutting-edge knowledge, and explore innovative practices that improve patient outcomes using
       advanced technology in the AI era.
     </Text>
-    <Text ml={5} mt={4} color="gray.500">
+    <Text mt={4} color="gray.500">
       This workshop is designed for healthcare professionals, researchers, and anyone interested in
       the intersection of AI and critical care medicine. Whether you're a seasoned expert or just
       starting to explore this field, you'll find valuable insights and networking opportunities.
@@ -125,7 +125,7 @@ const EventHighlightsSection = () => (
     <Heading size={subHeadingSize} mb={4} color="brand.500">
       Event Highlights
     </Heading>
-    <VStack ml={5} gap={6} alignItems="stretch">
+    <VStack gap={6} alignItems="stretch">
       <Box>
         <Text fontWeight="bold" color="gray.700">
           Primer on AI, LLM, and Data Bias Series
@@ -163,7 +163,7 @@ const ContactSection = () => (
     <Heading size={subHeadingSize} mb={4} color="brand.500">
       Contact Information
     </Heading>
-    <Text ml={5} color="gray.500">
+    <Text color="gray.500">
       Visit the main website for the conference at{' '}
       <InlineLink href={TSCCM_LINK}> {TSCCM_LINK.split('https://')[1]} </InlineLink> or send us an
       email to <InlineLink href={EMAIL_LINK}> {EMAIL_LINK.split('mailto:')[1]} </InlineLink>
@@ -196,7 +196,7 @@ const DateAndTimeSection = () => (
     <Heading size={subHeadingSize} mb={4} color="brand.500">
       Date and Time
     </Heading>
-    <VStack ml={5} align="flex-start" gap={6}>
+    <VStack align="flex-start" gap={6}>
       <HStack gap={4}>
         <Box as={FiCalendar} fontSize="xl" color="brand.800" />
         <Text fontSize="lg" color="gray.500">
@@ -233,7 +233,7 @@ export default function SchedulePage() {
           </VStack>
 
           <Stack direction={{ base: 'column', md: 'row' }} gap={12}>
-            <VStack align="flex-start" gap={12} width={{ base: '100%', md: '60%' }}>
+            <VStack align="flex-start" px={32} gap={12} width={{ base: '100%', md: '60%' }}>
               <DescriptionSection />
               <EventHighlightsSection />
               <ContactSection />
@@ -245,17 +245,19 @@ export default function SchedulePage() {
             </VStack>
           </Stack>
 
-          <Box width="100%" maxW="800px" mx="auto">
-            <Heading size={subHeadingSize} mb={6} color="brand.500" textAlign="center">
-              Schedule
-            </Heading>
-            <VStack gap={4} alignItems="stretch">
-              {scheduleItems.map((item, index) => (
-                <Box key={index} bg="gray.50" p={4} borderRadius="lg" boxShadow="sm">
-                  <ScheduleItem {...item} />
-                </Box>
-              ))}
-            </VStack>
+          <Box width="100%" mx="auto" mt={16} px={{ base: 12, md: 24}}>
+            <Box backgroundColor="brand.500" borderRadius={16} p={16}>
+              <Heading size={subHeadingSize} mb={8} color="white" fontSize="3xl" textAlign="start">
+                Schedule
+              </Heading>
+              <VStack gap={4} alignItems="stretch">
+                {scheduleItems.map((item, index) => (
+                  <Box key={index} bg="gray.50" p={4} borderRadius="lg" boxShadow="sm">
+                    <ScheduleItem {...item} />
+                  </Box>
+                ))}
+              </VStack>
+            </Box>
           </Box>
         </VStack>
       </Container>
