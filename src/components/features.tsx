@@ -1,4 +1,4 @@
-import { Heading, Text, Box, Container, HStack, Stack, Icon } from '@chakra-ui/react'
+import { Heading, Text, Box, Container, HStack, Icon, SimpleGrid } from '@chakra-ui/react'
 import { MdHealthAndSafety, MdSchool, MdLocalHospital, MdPolicy } from 'react-icons/md'
 
 const FeatureCard = ({
@@ -26,7 +26,7 @@ const FeatureCard = ({
 export const Features = () => (
   <Box py={16} bg="white">
     <Container maxW="container.xl">
-      <Stack direction={{ base: 'column', md: 'row' }} gap={3} alignItems="stretch">
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={8}>
         <FeatureCard
           icon={MdHealthAndSafety}
           title="Roles of AI in Intensive Care"
@@ -50,7 +50,7 @@ export const Features = () => (
           title="AI Policy Development"
           description="Take part in establishing ethical frameworks and regulations for responsible AI adoption in healthcare."
         />
-      </Stack>
+      </SimpleGrid>
     </Container>
   </Box>
 )
