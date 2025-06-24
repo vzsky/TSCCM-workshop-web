@@ -1,4 +1,4 @@
-# TSCCM Workshop 
+# TSCCM Workshop
 
 This is a really simple Typescript - Chakra UI project implementing a website for TSCCM workshop
 
@@ -16,7 +16,9 @@ Install it and run:
 yarn
 yarn dev
 ```
+
 to spawn a local dev version
 
-## For Devs 
-Fork it and make a Pull Request. Please also run  `yarn format` and make sure  `yarn build`run without error before your PR. Thanks <3
+## For Devs
+
+Fork it and make a Pull Request. Please also run `yarn format` and make sure `yarn build`run without error before your PR. Thanks <3
