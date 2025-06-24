@@ -1,9 +1,7 @@
-import { Box, Flex, Stack, Container, Heading, Text, HStack, VStack, Icon } from '@chakra-ui/react'
+import { Box, Flex, Stack, Container, Heading, Text } from '@chakra-ui/react'
 import { Button } from './button'
 import Link from 'next/link'
 import { REGISTRATION_LINK } from '../constants'
-import { MapIFrame } from './map'
-import { FaPlus } from 'react-icons/fa'
 
 export const HeadingComponent = () => (
   <Box bg="white" color="brand.500">
@@ -18,92 +16,55 @@ export const HeadingComponent = () => (
         px={{ base: 0, lg: 10 }}
       >
         {/* Left: Main content */}
-        <Box
-          flex={{ base: '1 1 100%', lg: '0 0 70%' }}
-          w="100%"
-          display="flex"
-          alignItems={{ base: 'center', lg: 'flex-start' }}
-          justifyContent="center"
-        >
-          <VStack w="100%" gap={8} align="stretch">
-            {/* Top icon and subtitle */}
-            <HStack justify="left" gap={3} display="flex">
-              <Box
-                bg="brand.500"
-                borderRadius="full"
-                p={2}
-                display={{ base: 'flex', lg: 'none' }}
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Icon as={FaPlus} color="white" boxSize={6} />
-              </Box>
-              <Text
-                color="gray.500"
-                fontWeight={{ base: 'medium', lg: 'normal' }}
-                fontSize={{ base: 'md', md: 'lg', lg: '2xl' }}
-              >
-                TSCCM 2025 Interactive Workshop
-              </Text>
-            </HStack>
-            {/* Heading and description */}
-            <Box display={'block'} textAlign={{ base: 'center', lg: 'left' }}>
-              <Heading
-                display={{ base: 'block', lg: 'none' }}
-                fontSize="3xl"
-                fontWeight="extrabold"
-                color="brand.500"
-                mb={4}
-              >
-                Data Warehouse and AI in Intensive Care Medicine
-              </Heading>
-              <Heading
-                display={{ base: 'none', lg: 'block' }}
-                fontSize={{ base: '3xl', lg: '5xl' }}
-                fontWeight="extrabold"
-                lineHeight="1.1"
-              >
-                Data Warehouse and AI in <br /> Intensive Care Medicine
-              </Heading>
-
-              <Text
-                color="gray.600"
-                mt={4}
-                textAlign={{ base: 'center', lg: 'left' }}
-                fontSize={{ base: 'lg', lg: '2xl' }}
-              >
-                Join us for a workshop on utilizing data warehouse and AI technologies to enhance
-                intensive care medicine.
-              </Text>
-            </Box>
-            {/* Buttons */}
+        <Box flex={1} w="100%">
+          <Stack
+            gap={6}
+            align={{ base: 'center', lg: 'flex-start' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+          >
+            <Text color="gray.500" fontSize={{ base: 'lg', md: '2xl', lg: '2xl', xl: '3xl' }}>
+              TSCCM 2025 Interactive Workshop
+            </Text>
+            <Heading
+              fontSize={{ base: '3xl', md: '5xl', lg: '5xl', xl: '6xl' }}
+              fontWeight="bold"
+              lineHeight="1.2"
+            >
+              Data Warehouse and AI
+              <br />
+              in Intensive Care Medicine
+            </Heading>
             <Stack
               direction={{ base: 'column', md: 'row' }}
               gap={4}
-              w="100%"
-              display="flex"
-              justify={{ base: 'center', lg: 'flex-start' }}
+              w={{ base: '100%', md: 'auto' }}
+              justify="center"
+              align="center"
             >
               <Button
                 width={{ base: '100%', md: 'auto' }}
-                fontWeight="bold"
-                fontSize="lg"
+                maxWidth={{ base: '300px', lg: '400px', xl: '700px' }}
                 as={Link}
                 href={REGISTRATION_LINK}
+                p={{ base: 4, lg: 6 }}
               >
-                Register Now
+                <Text fontSize={{ base: 'lg', lg: '2xl' }} textAlign="center">
+                  Register Now
+                </Text>
               </Button>
               <Button
                 width={{ base: '100%', md: 'auto' }}
-                fontWeight="bold"
-                fontSize="lg"
+                maxWidth={'300px'}
                 as={Link}
                 href="/schedule"
+                p={{ base: 4, lg: 6 }}
               >
-                View Schedule
+                <Text fontSize={{ base: 'lg', lg: '2xl' }} textAlign="center">
+                  View Schedule
+                </Text>
               </Button>
             </Stack>
-          </VStack>
+          </Stack>
         </Box>
 
         {/* Right: Illustration and Date/Venue */}
@@ -116,21 +77,7 @@ export const HeadingComponent = () => (
           justifyContent="flex-end"
           position="relative"
         >
-          {/* Illustration Placeholder (desktop only) */}
-          <Box
-            display={{ base: 'none', lg: 'block' }}
-            mb={8}
-            alignSelf="flex-end"
-            width="320px"
-            height="240px"
-            bg="gray.100"
-            borderRadius="lg"
-            boxShadow="md"
-          >
-            <MapIFrame />
-          </Box>
           {/* Date and Venue Card */}
-
           <Box
             bg="white"
             border="1px solid"
@@ -141,15 +88,20 @@ export const HeadingComponent = () => (
             py={4}
             mt={{ base: 4, lg: 0 }}
             minW="260px"
-            maxW={{ base: '100%', md: '500px' }}
+            maxW={{ base: '300px', lg: '500px' }}
             w={{ base: '100%', lg: 'auto' }}
             alignSelf={{ base: 'center', lg: 'flex-end' }}
             display={{ base: 'block', lg: 'block' }}
           >
-            <Text fontSize="xl" fontWeight="bold" color="brand.800" textAlign="center">
+            <Text
+              fontSize={{ base: 'xl', lg: '2xl' }}
+              fontWeight="bold"
+              color="brand.700"
+              textAlign="center"
+            >
               July 19, 2025
             </Text>
-            <Text fontSize="md" color="brand.500" textAlign="center">
+            <Text fontSize={{ base: 'md', lg: 'lg' }} color="brand.500" textAlign="center">
               King Chulalongkorn Memorial Hospital
             </Text>
           </Box>
