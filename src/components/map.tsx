@@ -2,7 +2,7 @@ import { Box, Stack, Container } from '@chakra-ui/react'
 
 export const MapIFrame = () => (
   <iframe
-    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=King+Chulalongkorn+Memorial+Hospital`}
+    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=King+Chulalongkorn+Memorial+Hospital`}
     width="100%"
     height="100%"
     style={{ border: 0 }}
