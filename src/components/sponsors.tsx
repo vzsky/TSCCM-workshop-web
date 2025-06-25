@@ -1,4 +1,4 @@
-import { Heading, Box, Container, Text, SimpleGrid, Image } from '@chakra-ui/react'
+import { Heading, Box, Container, Text, Stack, SimpleGrid, Image } from '@chakra-ui/react'
 
 const sponsors = [
   {
@@ -9,22 +9,14 @@ const sponsors = [
     name: 'CIS IMAGING',
     image: '/static/CIS_IMAGING.jpg',
   },
-  {
-    name: 'Placeholder 3',
-    image: 'https://via.placeholder.com/200x100',
-  },
-  {
-    name: 'Placeholder 4',
-    image: 'https://via.placeholder.com/200x100',
-  },
 ]
 
 export const Sponsors = () => (
   <Box py={16} bg="white">
     <Container maxW="container.xl">
-      <div style={{ display: 'flex', gap: '40px' }}>
+      <Stack direction={{ base: 'column', lg: 'row' }} gap={{ base: 50, lg: 20 }} align="center">
         {/*Left*/}
-        <div style={{ flex: 1 }}>
+        <Box flex="1">
           <SimpleGrid columns={{ base: 2, md: 2, lg: 2 }} gap={6}>
             {sponsors.map((sponsor) => (
               <Box
@@ -54,46 +46,26 @@ export const Sponsors = () => (
               </Box>
             ))}
           </SimpleGrid>
-        </div>
+        </Box>
 
         {/*Right*/}
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'stretch',
-            textAlign: 'center',
-            padding: '10 px',
-          }}
+        <Box
+          flex="1"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="flex-start"
+          px={{ base: 0, md: 8 }}
         >
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-              textAlign: 'left',
-              height: 'auto',
-              width: '100%',
-              maxWidth: '800px',
-              marginLeft: '100px',
-            }}
-          >
-            <Heading textAlign="left" size="5xl" color="brand.500">
-              Sponsors of the Event
-            </Heading>
-            <Text textAlign="left" color="gray.600" fontSize="xl">
-              <br />
-              These frontier organizations who are shaping the future of ICU
-              <br />
-              in Thailand are sponsoring our event.
-            </Text>
-          </div>
-        </div>
-      </div>
+          <Heading textAlign="left" size="3xl" color="brand.500" mb={4}>
+            Sponsors of the Event
+          </Heading>
+          <Text textAlign="left" color="gray.600" fontSize="xl">
+            These frontier organizations who are shaping the future of ICU in Thailand are
+            sponsoring our event.
+          </Text>
+        </Box>
+      </Stack>
     </Container>
   </Box>
 )
