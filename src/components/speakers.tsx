@@ -78,7 +78,7 @@ const speakers = [
     name: 'Han-Jay Shu',
     title: 'B.S. in Electrical Engineering and Computer Science, National Tsing Hua University',
     descriptions: [
-      'Specialty: Medical AI,  Fairness & Interpretability in Healthcare',
+      'Specialty: Medical AI, Fairness & Interpretability in Healthcare',
       'Areas of Interest: Chest X-ray AI, Bias Detection',
       'Unveiling Hidden Shortcuts: Examining the Impact of Exposure Parameters in Chest Radiography on AI Models, The 110th Scientific Assembly and Annual Meeting of Radiological Society of North America (RSNA 2024)), Oral paper, Chicago, USA, Dec 1-Dec 5, 2024',
       'Predicting Pulmonary Function from Chest X-Rays Using Deep Learning: A DenseNet Approach to Estimating FEV1/FVC Z-Scores," IEEE I2MTC 2025, Chemnitz, Germany, May 19-22, 2025.',
@@ -87,7 +87,8 @@ const speakers = [
   },
   {
     name: 'Leo Anthony Celi',
-    title: 'Cientista principal e Diretor Clínico no MIT Laboratory for Computational Physiology ',
+
+    title: 'Senior Scientist and Clinical Director at MIT Laboratory for Computational Physiology',
     descriptions: [
       'Directs all the interdisciplinary clinical research of the lab and mentors many young clinicians who collaborate with the core engineering staff on research projects.',
       'Working on a data-driven decision support system known as Collective Experience',
@@ -138,11 +139,9 @@ const Speaker = ({
 )
 
 export const Speakers = () => {
-  
   //Add scroll in horizontal
   const [scrollProgress, setScrollProgress] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-
 
   useEffect(() => {
     const handleScroll = () => {
