@@ -1,6 +1,6 @@
-# TypeScript Next.js Chakra example
+# TSCCM Workshop
 
-This is a really simple project that shows the usage of Next.js with TypeScript and Chakra.
+This is a really simple Typescript - Chakra UI project implementing a website for TSCCM workshop
 
 ## How to use it?
 
@@ -16,3 +16,9 @@ Install it and run:
 yarn
 yarn dev
 ```
+
+to spawn a local dev version
+
+## For Devs
+
+Fork it and make a Pull Request. Please also run `yarn format` and make sure `yarn build`run without error before your PR. Thanks <3
