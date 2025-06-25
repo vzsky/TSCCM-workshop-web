@@ -62,7 +62,7 @@ const speakers = [
       'Secured over SGD 10M in funding; organizes annual Singapore Healthcare AI Datathon',
       "Co-founded FathomX, an AI startup empowering Asian women's health, valued at USD 15M",
     ],
-    imageSrc: '/static/Feng.avif',
+    imageSrc: '/static/Feng.webp',
   },
   {
     name: 'Thomas Sounack',
@@ -83,7 +83,7 @@ const speakers = [
       'Unveiling Hidden Shortcuts: Examining the Impact of Exposure Parameters in Chest Radiography on AI Models, The 110th Scientific Assembly and Annual Meeting of Radiological Society of North America (RSNA 2024)), Oral paper, Chicago, USA, Dec 1-Dec 5, 2024',
       'Predicting Pulmonary Function from Chest X-Rays Using Deep Learning: A DenseNet Approach to Estimating FEV1/FVC Z-Scores," IEEE I2MTC 2025, Chemnitz, Germany, May 19-22, 2025.',
     ],
-    imageSrc: '/static/hanjay.png',
+    imageSrc: '/static/hanjay.webp',
   },
   {
     name: 'Leo Anthony Celi',
