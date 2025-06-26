@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Stack, Link as ChakraLink } from '@chakra-ui/react'
 import Link from 'next/link'
 import { LinkProps } from '@chakra-ui/react'
+import { REGISTRATION_LINK } from '../constants'
 
 export const NavLink = ({ children, href }: LinkProps) => (
   <ChakraLink
@@ -29,7 +30,7 @@ export const Navbar = () => (
 
       <Flex alignItems={'center'}>
         <Stack direction={'row'} gap={7}>
-          <NavLink href="#register">Register</NavLink>
+          <NavLink href={REGISTRATION_LINK}>Register</NavLink>
         </Stack>
       </Flex>
     </Flex>
