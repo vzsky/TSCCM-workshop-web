@@ -9,6 +9,10 @@ const sponsors = [
     name: 'CIS IMAGING',
     image: '/static/CIS_IMAGING.jpg',
   },
+  {
+    name: 'XOVIC COMPANY',
+    image: '/static/XOVIC.jpg',
+  },
 ]
 
 export const Sponsors = () => (
