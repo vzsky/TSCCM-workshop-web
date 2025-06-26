@@ -9,7 +9,8 @@ export const InlineLink = ({ children, ...props }: InlineLinkProps) => (
   <ChakraLink
     display="inline"
     color="brand.500"
-    _hover={{ textDecoration: 'underline', color: 'brand.700' }}
+    textDecoration='underline'
+    _hover={{ color: 'brand.700' }}
     {...props}
   >
     {children}
