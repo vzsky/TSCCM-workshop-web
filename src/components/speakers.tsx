@@ -1,5 +1,4 @@
-import { Box, Container, Heading, Text, Stack, Image } from '@chakra-ui/react'
-import React, { useEffect, useState, useRef } from 'react'
+import { Box, Container, Heading, Text, Stack, Image, Wrap, WrapItem } from '@chakra-ui/react'
 
 const speakers = [
   {
@@ -136,32 +135,11 @@ const Speaker = ({
   </Box>
 )
 
-export const Speakers = () => {
-  //Add scroll in horizontal
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollContainerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current
-        const maxScroll = scrollWidth - clientWidth
-        const scrollPercent = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0
-        setScrollProgress(scrollPercent)
-      }
-    }
-
-    const container = scrollContainerRef.current
-    if (container) {
-      container.addEventListener('scroll', handleScroll)
-      return () => container.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  return (
-    <Box py={16} bg="white">
-      <Container maxW="container.xl">
-        <Stack gap={12}>
+export const Speakers = () => (
+  <Box pt={16} bg="white">
+    <Container maxW="container.xl">
+      <Stack gap={12}>
+        <Stack gap={3}>
           <Heading textAlign="center" size="3xl" color="brand.500">
             Featured Speakers
           </Heading>
@@ -170,37 +148,30 @@ export const Speakers = () => {
             understand the status of smart intensive care and the future of human-AI system in
             Thailand healthcare ecosystem.
           </Text>
-
-          {/* Scroll Bar*/}
-          <Box ref={scrollContainerRef} overflowX="auto" overflowY="hidden">
-            <Box display="flex" gap={10} pb={4} minWidth="max-content">
-              {speakers.map((speaker) => (
-                <Box key={speaker.name} minWidth="300px" maxWidth="300px" flexShrink={0}>
-                  <Speaker {...speaker} />
-                </Box>
-              ))}
-            </Box>
-          </Box>
-
-          <Box
-            maxWidth="400px"
-            mx="auto"
-            mt={8}
-            height="4px"
-            bg="gray.200"
-            borderRadius="full"
-            overflow="hidden"
-          >
-            <Box
-              height="100%"
-              bg="gray.500"
-              borderRadius="full"
-              width={`${scrollProgress}%`}
-              transition="width 0.2s"
-            />
-          </Box>
         </Stack>
-      </Container>
-    </Box>
-  )
-}
+
+        {/* Scroll Bar for thinner screens */}
+        <Box hideFrom="lg" overflowX="auto" overflowY="hidden">
+          <Box display="flex" gap={10} pb={4} minWidth="max-content">
+            {speakers.map((speaker) => (
+              <Box key={speaker.name} minWidth="300px" maxWidth="300px" flexShrink={0}>
+                <Speaker {...speaker} />
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        {/* Grid for wider screens */}
+        <Box hideBelow="lg">
+          <Wrap justify="center" rowGap={5} columnGap={'calc((100% - 900px)/3)'}>
+            {speakers.map((speaker) => (
+              <WrapItem w="300px">
+                <Speaker {...speaker} />
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
+      </Stack>
+    </Container>
+  </Box>
+)
