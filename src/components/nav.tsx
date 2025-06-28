@@ -15,10 +15,10 @@ export const NavLink = ({ children, href }: LinkProps) => (
       color: 'white',
       outlineStyle: 'solid',
       outlineWidth: '1px',
-      outlineColor: 'brand.600', 
+      outlineColor: 'brand.600',
     }}
     _focus={{ outline: 'none' }}
-    _active={{ }}
+    _active={{}}
     href={href}
   >
     {children}
