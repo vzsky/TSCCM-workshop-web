@@ -18,7 +18,11 @@ const sponsors = [
 export const Sponsors = () => (
   <Box py={16} bg="white">
     <Container maxW="container.xl">
-      <Stack direction={{ base: 'column', lg: 'row' }} gap={{ base: 50, lg: 20 }} align="center">
+      <Stack
+        direction={{ base: 'column-reverse', lg: 'row' }}
+        gap={{ base: 50, lg: 20 }}
+        align="center"
+      >
         {/*Left*/}
         <Box flex="1">
           <SimpleGrid columns={{ base: 2, md: 2, lg: 2 }} gap={6}>
@@ -33,11 +37,7 @@ export const Sponsors = () => (
                 alignItems="center"
                 justifyContent="center"
                 height="200px"
-                _hover={{
-                  boxShadow: 'md',
-                  transform: 'scale(1.001)',
-                  bg: 'gray.50', // optional: subtle background change
-                }}
+                _hover={{ boxShadow: 'lg' }}
               >
                 <Image
                   src={sponsor.image}

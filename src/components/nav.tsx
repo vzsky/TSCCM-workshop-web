@@ -9,10 +9,16 @@ export const NavLink = ({ children, href }: LinkProps) => (
     py={1}
     color="brand.100"
     as={Link}
+    borderRadius={3}
     _hover={{
       textDecoration: 'none',
       color: 'white',
+      outlineStyle: 'solid',
+      outlineWidth: '1px',
+      outlineColor: 'brand.600',
     }}
+    _focus={{ outline: 'none' }}
+    _active={{}}
     href={href}
   >
     {children}

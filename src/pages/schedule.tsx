@@ -273,7 +273,7 @@ export default function SchedulePage() {
           <Box width="100%" mx="auto" mt={16} px={{ base: 6, md: 24 }}>
             <Box backgroundColor="brand.500" borderRadius={16} p={{ base: 6, md: 16 }}>
               <Heading size={subHeadingSize} mb={8} color="white" fontSize="3xl" textAlign="start">
-                Schedule
+                Time Table
               </Heading>
               <VStack gap={4} alignItems="stretch">
                 {scheduleItems.map((item, index) => (
