@@ -3,8 +3,16 @@ import { Button } from './button'
 import Link from 'next/link'
 import { REGISTRATION_LINK } from '../constants'
 
+import dynamic from 'next/dynamic'
+const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then((mod) => mod.Player), {
+  ssr: false,
+})
+
 export const HeadingComponent = () => (
   <Box bg="white" color="brand.500">
+    <Box mt={6} zIndex={0} position={'absolute'}>
+      <Player src="/static/background.json" autoplay loop />
+    </Box>
     <Container maxW="container.xl" height={{ base: 'auto', lg: '100vh' }} p={5}>
       <Flex
         direction={{ base: 'column', lg: 'row' }}
