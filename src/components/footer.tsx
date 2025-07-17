@@ -7,6 +7,7 @@ import {
   Link as ChakraLink,
   VStack,
   LinkProps,
+  Image,
 } from '@chakra-ui/react'
 import { Button } from './button'
 import { REGISTRATION_LINK, CRITICAL_CARE_LINK, TSCCM_LINK, EMAIL_LINK } from '../constants'
@@ -32,9 +33,12 @@ export const Footer = () => (
       >
         {/* Left: Event Name & Tagline */}
         <VStack align="start" gap={1}>
-          <Text fontWeight="bold" fontSize="xl" color="white">
-            TSCCM 2025
-          </Text>
+          <HStack>
+            <Image mr={5} borderRadius={'24px'} src="/static/logo.jpg" alt="TSCCM Logo" boxSize="48px" mb={2} />
+            <Text fontWeight="bold" fontSize="xl" color="white">
+              TSCCM 2025
+            </Text>
+          </HStack>
           <Text fontSize="lg" color="brand.200">
             Data Warehouse & AI in Intensive Care Medicine
           </Text>
