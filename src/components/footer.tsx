@@ -34,7 +34,14 @@ export const Footer = () => (
         {/* Left: Event Name & Tagline */}
         <VStack align="start" gap={1}>
           <HStack>
-            <Image mr={5} borderRadius={'24px'} src="/static/logo.jpg" alt="TSCCM Logo" boxSize="48px" mb={2} />
+            <Image
+              mr={5}
+              borderRadius={'24px'}
+              src="/static/logo.jpg"
+              alt="TSCCM Logo"
+              boxSize="48px"
+              mb={2}
+            />
             <Text fontWeight="bold" fontSize="xl" color="white">
               TSCCM 2025
             </Text>
