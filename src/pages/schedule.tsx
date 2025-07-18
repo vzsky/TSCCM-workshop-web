@@ -31,12 +31,12 @@ const scheduleItems: ScheduleItem[] = [
     speaker: 'TSCCM Data Workshop Team',
   },
   {
-    time: '10:15',
+    time: '10:30',
     title: 'Primer on Large Language Model (LLM): Demonstration and Application',
     speaker: 'TSCCM Data Workshop Team',
   },
   {
-    time: '11:00',
+    time: '11:15',
     title: 'Reimagination of Research and Education on AI',
     speaker: 'TSCCM Data Workshop Team',
   },
